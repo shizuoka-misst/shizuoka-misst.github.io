@@ -95,6 +95,73 @@ a.sticky{background:#302923!important;color:#f9f1e5!important;border-top:1px sol
   .hero h1.vertical-title { inline-size:255px!important; font-size:29px!important; }
   .hero-photo.collage-hero { height:315px!important; }
 }
+
+/* Title centering — PC: between kicker and subtitle; mobile: between kicker and portrait */
+@media (min-width: 761px) {
+  .hero { align-items: stretch; }
+  .hero-copy {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto auto auto auto auto;
+    justify-items: center;
+    align-items: center;
+    padding: 46px 30px !important;
+    min-height: 760px;
+  }
+  .hero .kicker {
+    grid-row: 1;
+    margin: 0 !important;
+    align-self: start;
+  }
+  .hero h1.vertical-title {
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    margin: 0 !important;
+    inline-size: 345px !important;
+  }
+  .hero .sub {
+    grid-row: 3;
+    margin: 0 !important;
+  }
+  .hero .rule { grid-row: 4; }
+  .hero .hero-meta { grid-row: 5; }
+  .hero .hero-date { grid-row: 6; }
+  .hero .btn { grid-row: 7; }
+  .hero-photo { min-height: 760px; }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto minmax(350px, auto) auto auto auto auto auto auto !important;
+    align-items: center;
+    padding: 28px 18px 40px;
+  }
+  .hero-copy { display: contents !important; }
+  .hero .kicker {
+    grid-row: 1 !important;
+    grid-column: 1 !important;
+    margin: 0 !important;
+    align-self: start;
+  }
+  .hero h1.vertical-title {
+    grid-row: 2 !important;
+    grid-column: 1 !important;
+    justify-self: center !important;
+    align-self: center !important;
+    margin: 0 !important;
+  }
+  .hero-photo.collage-hero {
+    grid-row: 3 !important;
+    grid-column: 1 !important;
+  }
+}
+@media (max-width: 370px) {
+  .hero { grid-template-rows: auto minmax(320px, auto) auto auto auto auto auto auto !important; }
+}
+
 </style></head><body>
 <header class="nav"><a class="logo" href="#top"><img alt="Glamour Fatum" class="wordmark-image" src="gf_logo.jpg"/></a><nav class="nav-links"><a href="#story">STORY</a><a href="#characters">CHARACTERS</a><a href="#experience">EXPERIENCE</a><a href="#information">INFORMATION</a><a href="https://shizuoka-misst.github.io/">MISST公式HPへ戻る</a><a class="line" href="#reserve">LINEで予約する</a></nav></header>
 <main id="top">
