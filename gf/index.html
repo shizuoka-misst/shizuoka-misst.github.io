@@ -66,6 +66,35 @@ a.sticky{background:#302923!important;color:#f9f1e5!important;border-top:1px sol
   .hero-copy { padding-top: 44px; padding-bottom: 44px; }
   .hero .rule { margin-top: 18px; margin-bottom: 18px; }
 }
+
+/* FINAL cover geometry: desktop side-by-side; mobile stacked title then photo. */
+@media (min-width:761px) {
+  .hero { min-height:0; align-items:stretch; }
+  .hero-copy { padding:46px 30px; justify-content:center; gap:0; }
+  .hero h1.vertical-title { inline-size:345px; margin:18px auto 16px!important; flex:0 0 auto; }
+  .hero .sub { margin:0!important; }
+  .hero .rule { margin:20px auto 12px!important; }
+  .hero .hero-meta { margin:0; }
+  .hero .hero-date { margin:13px 0 13px; }
+  .hero-photo { min-height:680px; }
+}
+@media (max-width:760px) {
+  .hero { display:grid!important; grid-template-columns:minmax(0,1fr)!important; grid-template-rows:auto auto auto auto auto auto auto auto; padding:28px 18px 40px; gap:0; min-height:0; }
+  .hero-copy { display:contents!important; }
+  .hero .kicker { grid-column:1!important; grid-row:1!important; margin:0 0 24px!important; }
+  .hero h1.vertical-title { grid-column:1!important; grid-row:2!important; justify-self:center; align-self:start; margin:0 auto 12px!important; padding:0!important; inline-size:clamp(240px,69vw,320px)!important; font-size:clamp(29px,7.6vw,41px)!important; line-height:1.34!important; letter-spacing:.065em!important; }
+  .hero-photo.collage-hero { grid-column:1!important; grid-row:3!important; width:100%; max-width:480px; justify-self:center; min-height:0!important; height:clamp(300px,96vw,490px)!important; margin:0 auto!important; }
+  .hero-photo.collage-hero img { position:absolute; inset:0; object-fit:contain!important; object-position:center center!important; padding:0!important; }
+  .hero .sub { grid-column:1!important; grid-row:4!important; margin:8px auto 0!important; }
+  .hero .rule { grid-column:1!important; grid-row:5!important; margin:20px auto 8px!important; }
+  .hero .hero-meta { grid-column:1!important; grid-row:6!important; margin:0!important; }
+  .hero .hero-date { grid-column:1!important; grid-row:7!important; margin:13px 0!important; }
+  .hero .btn { grid-column:1!important; grid-row:8!important; }
+}
+@media (max-width:370px) {
+  .hero h1.vertical-title { inline-size:255px!important; font-size:29px!important; }
+  .hero-photo.collage-hero { height:315px!important; }
+}
 </style></head><body>
 <header class="nav"><a class="logo" href="#top"><img alt="Glamour Fatum" class="wordmark-image" src="gf_logo.jpg"/></a><nav class="nav-links"><a href="#story">STORY</a><a href="#characters">CHARACTERS</a><a href="#experience">EXPERIENCE</a><a href="#information">INFORMATION</a><a href="https://shizuoka-misst.github.io/">MISST公式HPへ戻る</a><a class="line" href="#reserve">LINEで予約する</a></nav></header>
 <main id="top">
