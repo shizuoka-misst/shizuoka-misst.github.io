@@ -7,30 +7,40 @@
 <title>MISST 没入型謎解き実験</title>
 <link rel="stylesheet" href="style.css?v=3">
 <link rel="icon" href="logo.png">
-
-<style>
-/* Additive styles for the two 2027 listings. Existing style.css / script.js remain untouched. */
-.active-test .misst-next-feature { position: relative; width: 100%; box-sizing: border-box; }
-.active-test .misst-feature-content { position: relative; z-index: 1; }
-.active-test .misst-small-label { font-size: .7rem; letter-spacing: .13em; opacity: .66; margin: 0 0 1rem; }
-.active-test .misst-next-feature h3 { font-size: clamp(1.6rem,3.5vw,2.75rem); line-height: 1.45; margin: .5rem 0 1rem; overflow-wrap: anywhere; }
-.active-test .misst-feature-date { font-size: .83rem; letter-spacing: .05em; opacity: .8; margin: 0 0 1.4rem; }
-.active-test .misst-next-feature p { max-width: 65ch; }
-.active-test .misst-reservation-note { font-size: .88rem; margin: 1.2rem 0; }
-.active-test .misst-feature-link { display: inline-flex; align-items: center; gap: 2.2rem; margin-top: 1rem; padding: .9rem 1.25rem; border: 1px solid currentColor; text-decoration: none; font-weight: 600; transition: background .2s,color .2s; }
-.active-test .misst-feature-link:hover { background: #232a32; color: #fff; }
-.active-test .misst-collab { margin-top: clamp(3rem,7vw,6rem); padding-top: clamp(2rem,4vw,3.5rem); border-top: 1px solid currentColor; }
-.active-test .misst-collab-head > p { font-size: .75rem; letter-spacing: .1em; opacity: .7; margin: 0 0 .6rem; }
-.active-test .misst-collab-head h3 { font-size: clamp(1.5rem,2.5vw,2.2rem); margin: 0 0 1.3rem; }
-.active-test .misst-collab-body { display: flex; justify-content: space-between; align-items: end; gap: 1.6rem; padding: 1.8rem; border: 1px solid currentColor; }
-.active-test .misst-collab-body h4 { font-size: clamp(1.3rem,2.5vw,1.9rem); margin: 0 0 .65rem; }
-.active-test .misst-collab-body p { margin-top: .4rem; max-width: 52ch; line-height: 1.8; }
-.active-test .misst-collab-body a { flex-shrink: 0; display: inline-flex; gap: 1.4rem; align-items: center; padding: .65rem 0; text-decoration: none; border-bottom: 1px solid currentColor; }
-@media(max-width:700px){
-  .active-test .misst-collab-body { display: block; padding: 1.25rem; }
-  .active-test .misst-collab-body a { margin-top: 1.1rem; }
-  .active-test .misst-feature-link { gap: 1rem; }
+<style id="misst-upcoming-layout-v2">
+/* ROOM 04: simple vertical stacking on every viewport */
+.active-test { display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 0 !important; }
+.active-test > .section-title { width: 100% !important; max-width: none !important; margin-bottom: clamp(26px,5vw,64px) !important; }
+.active-test .misst-upcoming-list { width: 100% !important; max-width: 1100px; margin: 0 auto !important; min-width: 0; }
+.active-test .misst-upcoming-card { display: grid !important; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: stretch; width: 100%; min-width: 0; border: 1px solid #bdc6ca; background: #f9fafb; }
+.active-test .misst-upcoming-photo { position: relative; min-height: 360px; display: flex; align-items: center; justify-content: center; background: #eee5d4; overflow: hidden; padding: 22px; }
+.active-test .misst-upcoming-photo img { width: 100%; max-width: 390px; height: 100%; max-height: 465px; object-fit: contain; display: block; }
+.active-test .misst-photo-label { position: absolute; bottom: 12px; left: 16px; color: #444; font-size: .67rem; letter-spacing: .12em; background: rgba(255,255,255,.72); padding: 4px 7px; }
+.active-test .misst-upcoming-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: clamp(24px,4.3vw,60px); }
+.active-test .misst-section-kicker { font-size: .72rem; letter-spacing: .10em; opacity: .68; line-height: 1.6; margin: 0 0 12px !important; }
+.active-test .misst-upcoming-copy h3 { font-size: clamp(1.5rem,3vw,2.35rem); line-height: 1.5; margin: 0 0 17px !important; overflow-wrap: anywhere; }
+.active-test .misst-event-date { font-size: .76rem; letter-spacing: .065em; margin: 0 0 24px !important; }
+.active-test .misst-event-desc { line-height: 1.9; font-size: .96rem; max-width: 45ch; margin: 0 0 22px !important; }
+.active-test .misst-booking-start { font-size: .84rem; line-height: 1.8; margin: 0 0 20px !important; }
+.active-test .misst-event-cta { display: inline-flex !important; width: auto !important; max-width: 100%; box-sizing: border-box; align-items: center; justify-content: space-between; gap: 22px; border: 1px solid currentColor; padding: 12px 18px; text-decoration: none; font-size: .92rem; line-height: 1.4; white-space: normal; background: transparent; color: inherit; transition: color .2s,background .2s; }
+.active-test .misst-event-cta:hover { background: #1d2933; color: white; }
+.active-test .misst-collab-section { display: block !important; width: 100%; padding-top: clamp(42px,7vw,88px); margin: clamp(42px,7vw,88px) 0 0 !important; border-top: 1px solid #bbc3c8; }
+.active-test .misst-collab-header { margin: 0 0 20px; }
+.active-test .misst-collab-header h3 { font-size: clamp(1.5rem,3vw,2.3rem); margin: 0 !important; }
+.active-test .misst-collab-card { display: flex !important; justify-content: space-between; align-items: center; gap: 26px; padding: clamp(24px,4vw,40px); border: 1px solid #bdc6ca; background: #f9fafb; }
+.active-test .misst-collab-info { flex: 1; min-width: 0; }
+.active-test .misst-collab-info h4 { font-size: clamp(1.3rem,2.2vw,1.95rem); margin: 0 0 10px !important; }
+.active-test .misst-collab-info > p:last-child { line-height: 1.9; margin: 0 !important; max-width: 53ch; }
+.active-test .misst-collab-card .misst-event-cta { flex-shrink: 0; }
+@media(max-width:750px){
+ .active-test .misst-upcoming-card { display: block !important; }
+ .active-test .misst-upcoming-photo { min-height: 0; height: 310px; padding: 14px; }
+ .active-test .misst-upcoming-photo img { max-height: 292px; }
+ .active-test .misst-upcoming-copy { padding: 25px 20px 30px; }
+ .active-test .misst-collab-card { display: block !important; padding: 24px 20px; }
+ .active-test .misst-collab-card .misst-event-cta { margin-top: 22px; }
 }
+@media(max-width:420px){.active-test .misst-upcoming-photo {height: 258px}.active-test .misst-upcoming-photo img {max-height:240px}}
 </style>
 </head>
 <body class="before-entry">
@@ -45,7 +55,7 @@
 </div>
 <nav aria-label="サイト内メニュー">
 <a href="#subject">実験概要</a>
-<a href="#archive">観測記録</a>
+<a href="#archive">実験記録</a>
 <a href="#protocol">参加手順</a>
 </nav>
 <button class="status-button mono" id="status-button" type="button">
@@ -84,7 +94,7 @@
 </i> PUBLIC OBSERVATION TOUR / 001</p>
 <h1>体験は、<br>
 <em>思考</em>のためにある。</h1>
-<p class="lead">私たちは、没入体験を通して生まれる<br>思考の変化を観測しています。</p>
+<p class="lead">私たちは、没入体験を通して生まれる<br>思考の変化を実験しています。</p>
 <button class="entry-button" id="entry-button" type="button">
 <span>実験を見学する</span>
 <small>BEGIN PUBLIC TOUR</small>
@@ -122,14 +132,14 @@
 </i>
 </div>
 <p class="mono">ROOM 01 / ORIENTATION</p>
-<h2>ようこそ、<br>観測施設へ。</h2>
+<h2>ようこそ、<br>実験施設へ。</h2>
 <p>実験には決められた結果はありません、<br>ご自身の思考だけをお持ちください。</p>
 <span class="door-number mono">01</span>
 </section>
 <section class="section subject" id="subject" data-stage="2">
 <header class="section-title">
 <span class="room mono">ROOM 02</span>
-<p>SUBJECT / 観測対象</p>
+<p>SUBJECT / 実験対象</p>
 <h2>終わってから、<br>はじまるもの。</h2>
 </header>
 <div class="subject-copy">
@@ -203,44 +213,49 @@
 </div>
 </div>
 </section>
-<section class="section active-test" data-stage="4">
+<section class="section active-test" data-stage="4" id="next-experiment">
 <header class="section-title">
 <span class="room mono">ROOM 04</span>
 <p>ACTIVE TEST / 実施予定</p>
-<h2>次の観測。</h2>
+<h2>次の実験。</h2>
 </header>
-<div class="test-panel misst-next-feature">
-  <div class="test-state mono"><i></i> NEXT EXPERIMENT / 2027</div>
-  <div class="misst-feature-content">
-    <p class="mono misst-small-label">IMMERSIVE MYSTERY / REPERFORMANCE</p>
-    <h3>名も無きデザイナーをさがして</h3>
-    <p class="misst-feature-date mono">2027.01.31 SUN / SOCO park89</p>
-    <p>華やかなファッションブランド「Glamour Fatum」へ。<br>新人モデルとして10周年記念ショーに招待されたあなたを待つ、約70分の没入型ミステリー。</p>
-    <p class="misst-reservation-note">予約受付開始：2026年12月2日（水）12:00</p>
-    <a href="./gf/" class="misst-feature-link">公演の詳細・ご予約はこちら <span aria-hidden="true">↗</span></a>
-  </div>
-</div>
-<div class="misst-collab" aria-labelledby="misst-collab-heading">
-  <div class="misst-collab-head">
-    <p class="mono">COMMISSIONED WORK / 制作協力</p>
-    <h3 id="misst-collab-heading">制作協力</h3>
-  </div>
-  <div class="misst-collab-body">
-    <div>
-      <p class="mono misst-small-label">MYSTERY EXPERIENCE</p>
-      <h4>消失のM</h4>
-      <p>カフェからの依頼を受け、MISSTが制作に携わる謎解き企画。</p>
+<div class="misst-upcoming-list">
+  <article class="misst-upcoming-card" aria-labelledby="misst-gf-title">
+    <div class="misst-upcoming-photo">
+      <img src="gf/reika_hero.png" alt="Glamour Fatumのデザイナー、サノレイカのコラージュビジュアル" loading="lazy">
+      <span class="mono misst-photo-label">EXPERIMENT / 2027</span>
     </div>
-    <a href="https://tinmoku.my.canva.site/m" target="_blank" rel="noopener noreferrer">特設ページを見る <span aria-hidden="true">↗</span></a>
-  </div>
+    <div class="misst-upcoming-copy">
+      <p class="mono misst-section-kicker">NEXT EXPERIMENT / IMMERSIVE MYSTERY</p>
+      <h3 id="misst-gf-title">名も無きデザイナーをさがして</h3>
+      <p class="mono misst-event-date">2027.01.31 SUN / SOCO park89</p>
+      <p class="misst-event-desc">ファッションブランド「Glamour Fatum」の10周年記念ショー。新人モデルとして招待されたあなたは、華やかな世界の裏側へと足を踏み入れる。約70分の没入型ミステリー。</p>
+      <p class="misst-booking-start">予約受付開始：2026年12月2日（水）12:00</p>
+      <a class="misst-event-cta" href="./gf/">公演の詳細を見る <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+  <section class="misst-collab-section" aria-labelledby="misst-collab-heading">
+    <div class="misst-collab-header">
+      <p class="mono misst-section-kicker">PRODUCTION SUPPORT / 制作協力</p>
+      <h3 id="misst-collab-heading">制作協力</h3>
+    </div>
+    <article class="misst-collab-card" aria-labelledby="misst-m-title">
+      <div class="misst-collab-info">
+        <p class="mono misst-section-kicker">CAFE MYSTERY</p>
+        <h4 id="misst-m-title">消失のM</h4>
+        <p>「M」の消失をめぐる、ひとつの謎。手がかりを読み解き、隠された真相に迫る、カフェで楽しむ謎解き体験。</p>
+      </div>
+      <a class="misst-event-cta" href="https://tinmoku.my.canva.site/m" target="_blank" rel="noopener noreferrer">特設ページを見る <span aria-hidden="true">↗</span></a>
+    </article>
+  </section>
 </div>
 </section>
 <section class="section archive" id="archive" data-stage="5">
 <header class="section-title">
 <span class="room mono">ROOM 05</span>
-<p>ARCHIVE / 観測記録</p>
-<h2>実施済みの<br>観測実験。</h2>
-<small>観測は終了しました。</small>
+<p>ARCHIVE / 実験記録</p>
+<h2>実施済みの<br>実験。</h2>
+<small>実験は終了しました。</small>
 </header>
 <div class="records">
 <button class="record" data-record="designer" type="button">
@@ -403,7 +418,7 @@
       <h3>MISST</h3>
       <p>
         静岡を拠点に、謎解きと没入体験を制作しています。<br>
-        最新の公演情報や観測記録は、公式SNSからご確認ください。
+        最新の公演情報や実験記録は、公式SNSからご確認ください。
       </p>
     </div>
   </div>
@@ -454,10 +469,10 @@
 <p class="spec-label">
 <i>
 </i> OBSERVATION COMPLETE</p>
-<h2>観測は、終了しました。</h2>
+<h2>実験は、終了しました。</h2>
 <div class="result-message">
 <p>あなたは、MISSTの活動を<br>見学していたのではありません。</p>
-<p>体験を見て、問いに触れ、<br>何かを考えた時点で、<br>あなたも観測対象になっていました。</p>
+<p>体験を見て、問いに触れ、<br>何かを考えた時点で、<br>あなたも実験対象になっていました。</p>
 </div>
 <div class="subject-number">
 <span class="mono">SUBJECT IDENTIFICATION</span>
@@ -479,7 +494,7 @@
 </dl>
 <p class="closing">その思考を、<br>持ち帰ってください。</p>
 <div class="result-links">
-<a href="#archive">観測記録を見る</a>
+<a href="#archive">実験記録を見る</a>
 <a href="#entry" id="exit-button">施設を退出する</a>
 </div>
 </section>
@@ -494,7 +509,7 @@
 <span>END OF RECORD / BEGINNING OF THOUGHT</span>
 <button id="restricted" type="button">RESTRICTED FILE [ ? ]</button>
 </div>
-<p class="privacy">このサイト上の被験者表示・思考観測は物語上の演出です。思考試験の回答は保存・送信されません。</p>
+<p class="privacy">このサイト上の被験者表示・思考実験は物語上の演出です。思考試験の回答は保存・送信されません。</p>
 </footer>
 <dialog id="record-dialog" aria-labelledby="dialog-title">
 <div class="dialog-header mono">
@@ -539,13 +554,13 @@
     </h2>
 
     <p>
-      退出すると、現在の観測記録は破棄されます。<br>
+      退出すると、現在の実験記録は破棄されます。<br>
       被験者識別番号を復元することはできません。
     </p>
 
     <div class="exit-actions">
       <button id="exit-cancel" type="button">
-        観測を継続する
+        実験を継続する
         <small>RETURN TO OBSERVATION</small>
       </button>
 
